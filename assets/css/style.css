@@ -1,2 +1,21 @@
-.jumbotron {background: url('../image/tracks.jpg') no-repeat center center;}
 
+@font-face {
+    font-family: GrenadierNF;
+    src: url(../fonts/GrenadierNF.ttf);
+}
+.jumbotron {
+     font-family:GrenadierNF, sans-serif;
+     color: white;
+     -webkit-text-stroke-width: 1px;
+     -webkit-text-stroke-color: black;
+     background: url('../images/train.jpg') no-repeat center center fixed;
+     min-width: 800px;
+}
+
+     body {
+        background: url('../images/tracks.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+   }
