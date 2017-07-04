@@ -13,9 +13,14 @@
 }
 
      body {
+
+     	font-family: Arial, Helvetica, sans-serif;
         background: url('../images/tracks.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
    }
+
+  .panel-heading  {background-color: #999e37;
+   	color:white;}
