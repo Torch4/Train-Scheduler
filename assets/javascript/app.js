@@ -1,3 +1,4 @@
+//connects to firebase
 $(document).ready(function(){
 var config = {
     apiKey: "AIzaSyCyx5pCA08mqwsu2rHg8KbUjDAXDVWb3l0",
@@ -8,7 +9,7 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
-
+//controls what happens when you press submit
 $("#submit").on("click", function() {
 
 	var name = $('#nameInput').val().trim();
@@ -42,7 +43,7 @@ database.ref().on("child_added", function(childSnapshot){
 	console.log("Frequency: " + freq);
 
 	var freq = parseInt(freq);
-	
+	//defines parameters
 	var currentTime = moment();
 	console.log("CURRENT TIME: " + moment().format('HH:mm'));
 	
@@ -72,7 +73,7 @@ $('#trainTable').append(
 		"</td><td id='nextDisplay'>" + moment(nextTrain).format("HH:mm") +
 		"</td><td id='awayDisplay'>" + minsAway  + ' minutes until arrival' + "</td></tr>");
  },
-
+//error check
 function(errorObject){
     console.log("Read failed: " + errorObject.code)
 });
