@@ -8,15 +8,17 @@ var config = {
   };
 firebase.initializeApp(config);
 
+// Reference to the database service	
 var database = firebase.database();
 //controls what happens when you press submit
 $("#submit").on("click", function() {
-
+// Reference to the database service
 	var name = $('#nameInput').val().trim();
     var dest = $('#destInput').val().trim();
     var time = $('#timeInput').val().trim();
     var freq = $('#freqInput').val().trim();
 
+    // Code for handling the push
 	database.ref().push({
 		name: name,
 		dest: dest,
@@ -29,7 +31,7 @@ $("#submit").on("click", function() {
     return false;
 });
 
-
+// Creates the table with Train data and performs calculations for Next Arrival and Minutes Away
 database.ref().on("child_added", function(childSnapshot){
 	
 	var name = childSnapshot.val().name;
